@@ -14,9 +14,6 @@
             font-style: normal;
         }
 
-        /* Incluir la fuente Montserrat desde Google Fonts para el botón */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-
         /* Estilos generales para la página */
         body, html {
             margin: 0;
@@ -31,21 +28,26 @@
             overflow: hidden;
         }
 
-        /* Estilo de la imagen de fondo */
-        body {
-            background: url('landing_foto.png') no-repeat center center fixed;
-            background-size: cover;
+        /* Estilo del video de fondo */
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover; /* Asegura que el video cubra toda la pantalla */
         }
 
         /* Contenedor del contenido superpuesto (título y botón) */
         .content {
             text-align: left;
-            margin-left: 5%;
+            margin-left: 10%;
             z-index: 2;
-            max-width: 90%;
+            max-width: 80%;
         }
 
-        /* Estilo del título principal para pantallas grandes */
+        /* Estilo del título principal */
         h1 {
             font-size: 7.5rem; /* Tamaño de fuente grande para pantallas normales */
             font-weight: bold;
@@ -60,18 +62,18 @@
             white-space: nowrap;
         }
 
-        /* Estilo del botón con fuente Montserrat */
+        /* Estilo del botón */
         .button {
             display: inline-block;
-            padding: 12px 25px;
-            font-size: 1rem; 
-            font-family: 'Montserrat', sans-serif;
+            padding: 15px 30px;
+            font-size: 1.2rem;
             color: white;
             background-color: #FF0000;
             text-decoration: none;
-            border-radius: 5px; 
-            margin-top: 40px;
+            border-radius: 10px; /* Hacer el botón cuadrado */
+            margin-top: 40px; /* Aumentar la separación entre el texto y el botón */
             font-weight: bold;
+            font-family: 'Montserrat', sans-serif; /* Fuente Montserrat para el botón */
         }
 
         /* Efecto hover en el botón */
@@ -79,41 +81,29 @@
             background-color: #d32f2f;
         }
 
-        /* Adaptación para pantallas pequeñas (móviles) */
+        /* Ajustes de estilo para pantallas más pequeñas */
         @media (max-width: 768px) {
             h1 {
-                font-size: 4.5rem; /* Ajustamos el tamaño para pantallas móviles */
-                line-height: 1;    /* Mantenemos una buena relación entre líneas */
+                font-size: 3.5rem;
             }
             .button {
-                font-size: 0.9rem;
+                font-size: 1rem;
                 padding: 10px 20px;
-            }
-
-            .content {
-                margin-left: 3%; /* Reducimos el margen para móviles */
-            }
-        }
-
-        /* Adaptación para pantallas muy pequeñas (móviles pequeños) */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 3.5rem; /* Tamaño más pequeño para pantallas muy pequeñas */
-                line-height: 1;
-            }
-
-            .button {
-                font-size: 0.8rem;
-                padding: 8px 15px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Video de fondo -->
+    <video autoplay muted loop id="background-video">
+        <source src="landing_video.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
+
     <!-- Contenido superpuesto (título y botón) -->
     <div class="content">
-        <h1><span class="nowrap">TEARS AND</span><br>FLOWERS</h1>
-        <a href="https://linktr.ee/TearsandFlowers" target="_blank" class="button">Escucha nuestra música</a>
+        <h1><span class="nowrap">TEARS AND</span><br>FLOWERS</h1> <!-- Aseguramos que "TEARS AND" esté en una sola línea -->
+        <a href="https://linktr.ee/TearsandFlowers?fbclid=PAZXh0bgNhZW0CMTEAAaYN0FiXmu6a8SI046q_91DiPKHMTxIFuM0EIdneth5eg-uhgJDEtpnFwVA_aem_AJorhRhGiLOf7ZxrcWMfuw" target="_blank" class="button">Escucha nuestra música</a>
     </div>
 </body>
 </html>
