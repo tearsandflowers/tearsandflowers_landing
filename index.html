@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tears and Flowers</title>
+
+    <!-- Incluir la fuente Futura desde el archivo .ttf local -->
+    <style>
+        @font-face {
+            font-family: 'FuturaCyrillicBold';
+            src: url('FuturaCyrillicBold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* Incluir la fuente Montserrat desde Google Fonts para el botón */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+        /* Estilos generales para la página */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'FuturaCyrillicBold', sans-serif;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: transparent;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Estilo de la imagen de fondo */
+        body {
+            background: url('landing_foto.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Contenedor del contenido superpuesto (título y botón) */
+        .content {
+            text-align: left;
+            margin-left: 5%;
+            z-index: 2;
+            max-width: 90%;
+        }
+
+        /* Estilo del título principal para pantallas grandes */
+        h1 {
+            font-size: 7.5rem; /* Tamaño de fuente grande para pantallas normales */
+            font-weight: bold;
+            color: #FF0000;
+            margin: 0;
+            line-height: 0.9;
+            overflow: visible;
+        }
+
+        /* Asegura que "TEARS AND" se mantenga en una sola línea */
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        /* Estilo del botón con fuente Montserrat */
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 1rem; 
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            background-color: #FF0000;
+            text-decoration: none;
+            border-radius: 5px; 
+            margin-top: 40px;
+            font-weight: bold;
+        }
+
+        /* Efecto hover en el botón */
+        .button:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Adaptación para pantallas pequeñas (móviles) */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4.5rem; /* Ajustamos el tamaño para pantallas móviles */
+                line-height: 1;    /* Mantenemos una buena relación entre líneas */
+            }
+            .button {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+
+            .content {
+                margin-left: 3%; /* Reducimos el margen para móviles */
+            }
+        }
+
+        /* Adaptación para pantallas muy pequeñas (móviles pequeños) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 3.5rem; /* Tamaño más pequeño para pantallas muy pequeñas */
+                line-height: 1;
+            }
+
+            .button {
+                font-size: 0.8rem;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenido superpuesto (título y botón) -->
+    <div class="content">
+        <h1><span class="nowrap">TEARS AND</span><br>FLOWERS</h1>
+        <a href="https://linktr.ee/TearsandFlowers" target="_blank" class="button">Escucha nuestra música</a>
+    </div>
+</body>
+</html>
