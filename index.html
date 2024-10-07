@@ -19,7 +19,7 @@
             overflow: hidden;
         }
 
-        /* Estilo del video de fondo */
+        /* Video de fondo */
         #background-video {
             position: fixed;
             right: 0;
@@ -59,6 +59,16 @@
 
         /* Ajustes para pantallas pequeñas */
         @media (max-width: 768px) {
+            /* En pantallas móviles, usar la imagen de respaldo en lugar del video */
+            #background-video {
+                display: none; /* Ocultar el video en móviles */
+            }
+
+            body {
+                background: url('landing_foto.png') no-repeat center center fixed;
+                background-size: cover; /* Usar la imagen de respaldo en móviles */
+            }
+
             .button {
                 font-size: 3vw;
                 padding: 10px 20px;
@@ -68,8 +78,9 @@
 </head>
 <body>
     <!-- Video de fondo -->
-    <video autoplay muted loop id="background-video">
+    <video autoplay muted loop playsinline id="background-video">
         <source src="landing_video.mp4" type="video/mp4">
+        <source src="landing_video.webm" type="video/webm">
         Tu navegador no soporta el video.
     </video>
 
