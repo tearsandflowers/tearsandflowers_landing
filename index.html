@@ -19,8 +19,20 @@
             overflow: hidden;
         }
 
-        /* Video de fondo */
-        #background-video {
+        /* Video de fondo para pantallas grandes (desktop) */
+        #background-video-desktop {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        /* Video de fondo para móviles (vertical) */
+        #background-video-mobile {
+            display: none;
             position: fixed;
             right: 0;
             bottom: 0;
@@ -57,16 +69,14 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Ajustes para pantallas pequeñas */
+        /* Estilos para pantallas móviles (cambiar a video vertical) */
         @media (max-width: 768px) {
-            /* En pantallas móviles, usar la imagen de respaldo en lugar del video */
-            #background-video {
-                display: none; /* Ocultar el video en móviles */
+            #background-video-desktop {
+                display: none; /* Ocultar el video de escritorio */
             }
 
-            body {
-                background: url('landing_foto.png') no-repeat center center fixed;
-                background-size: cover; /* Usar la imagen de respaldo en móviles */
+            #background-video-mobile {
+                display: block; /* Mostrar el video vertical en móviles */
             }
 
             .button {
@@ -77,10 +87,16 @@
     </style>
 </head>
 <body>
-    <!-- Video de fondo -->
-    <video autoplay muted loop playsinline id="background-video">
+    <!-- Video de fondo para pantallas grandes -->
+    <video autoplay muted loop playsinline id="background-video-desktop">
         <source src="landing_video.mp4" type="video/mp4">
         <source src="landing_video.webm" type="video/webm">
+        Tu navegador no soporta el video.
+    </video>
+
+    <!-- Video de fondo para móviles -->
+    <video autoplay muted loop playsinline id="background-video-mobile">
+        <source src="landing_videovertical.mp4" type="video/mp4">
         Tu navegador no soporta el video.
     </video>
 
